@@ -46,13 +46,13 @@ var genSentimentHtml = function (dataObj) {
             var fodder = "I don't know what to say";
             break;
     }
-    var Positive = 'NEGATIVE';
-    if (dataObj.score_tag == 'P') Positive = 'positive';
-    var feed = 'This text is <b>' + Positive + '</b> with a confidence of a <b>' + dataObj.confidence + ' percent</b>. The polarities detected in it are in <b>' + dataObj.agreement.toLowerCase() + '</b>. The text is <b>' + dataObj.subjectivity.toLowerCase() + '</b> and <b>' + dataObj.irony.toLowerCase() + '</b>.';
+    var state = 'negative';
+    if (dataObj.score_tag == 'P') state = 'positive';
+    var feed = 'This text is <b>' + state + '</b> with a confidence of a <b>' + dataObj.confidence + ' percent</b>. The polarities detected in it are in <b>' + dataObj.agreement.toLowerCase() + '</b>. The text is <b>' + dataObj.subjectivity.toLowerCase() + '</b> and <b>' + dataObj.irony.toLowerCase() + '</b>.';
     var str = '<div class="josefin">' +
                     '<h1><b>The Sentiment</b></h1><h4>I feel that your document is</h4>' +
                     '<h2>' +
-                        percentage.toString() + '\% positive' +
+                        percentage.toString() + '\% ' + state +
                     '</h2><h4>' + feed + '</h4>' + '<h4><I>' + fodder + '</I></4>' +
                '</div>';
 
