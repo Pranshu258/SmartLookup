@@ -36,6 +36,7 @@
                                 '<a target="_blank" href="https://en.wikipedia.org/wiki/'+poo+'"><h4>' + data.query.pages[val].title + '</h4></a>' +
                                 '<p>' + extract + ' ...</p>' +
                             '</li>');
+                            
                         }
 
                     }
