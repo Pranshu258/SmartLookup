@@ -65,14 +65,14 @@ runAllJobs = function (topicsList, topicsWikiNamesList) {
     $('#news').html('');
     genNews(topicsList);
     //
-    $('#twitter').html('');
-    genTwitter(topicsList);
+
     //
     $('#web').html('');
     genWeb(topicsList);
     //
     genArticles(topicsList);
 
-
+    $('#twitter').html('');
+    genTwitter(topicsList);
 
 }

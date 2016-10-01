@@ -1,4 +1,5 @@
 ﻿var genTwitter = function (topicsList) {
+
     topicsList = topicsList.splice(0, 2);
     var text = topicsList.join(" OR ");
     //console.log("OK0",topicsList);
@@ -8,30 +9,28 @@
     //console.log("text",text);
     //text = encodeURI(text);
     //console.log(text);
-    var g_TwitterConsumerKey = "iXtu2thYWgBW9Bl5YdhosiMm4";
-    var g_TwitterConsumerSecret = "pc9FAhZUwPGSpCm8p8enpuJhxgLtciWndnluCDKRHP7Vs4AnH9";
+    var g_TwitterConsumerKey = "SYXr8Ve2IWaZgMjOpJfyd8JJC";
+    var g_TwitterConsumerSecret = "1PnBABTL2UNHcXanNFUXW7P7RFahihThKxlIKSrJ6msvj6WGSJ";
     var g_TwitterRequestToken = "https://api.twitter.com/oauth/request_token";
     var g_TwitterAuthUrl = "https://api.twitter.com/oauth/authenticate?oauth_token=";
-    var g_TweitterAccessUrl = "https://api.twitter.com/oauth/access_token";
-    var g_TwitterOAuth2Token = "https://api.twitter.com/oauth2/token";
+    var g_TwitterAccessUrl = "https://api.twitter.com/oauth/access_token";
+    var g_TwitterOAuth2Token = "http://api.twitter.com/oauth2/token";
     var authorizationHeaderParams = g_TwitterConsumerKey + ":" + g_TwitterConsumerSecret;
 
-    var Base64 = { _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (e) { var t = ""; var n, r, i, s, o, u, a; var f = 0; e = Base64._utf8_encode(e); while (f < e.length) { n = e.charCodeAt(f++); r = e.charCodeAt(f++); i = e.charCodeAt(f++); s = n >> 2; o = (n & 3) << 4 | r >> 4; u = (r & 15) << 2 | i >> 6; a = i & 63; if (isNaN(r)) { u = a = 64 } else if (isNaN(i)) { a = 64 } t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a) } return t }, decode: function (e) { var t = ""; var n, r, i; var s, o, u, a; var f = 0; e = e.replace(/[^A-Za-z0-9\+\/\=]/g, ""); while (f < e.length) { s = this._keyStr.indexOf(e.charAt(f++)); o = this._keyStr.indexOf(e.charAt(f++)); u = this._keyStr.indexOf(e.charAt(f++)); a = this._keyStr.indexOf(e.charAt(f++)); n = s << 2 | o >> 4; r = (o & 15) << 4 | u >> 2; i = (u & 3) << 6 | a; t = t + String.fromCharCode(n); if (u != 64) { t = t + String.fromCharCode(r) } if (a != 64) { t = t + String.fromCharCode(i) } } t = Base64._utf8_decode(t); return t }, _utf8_encode: function (e) { e = e.replace(/\r\n/g, "\n"); var t = ""; for (var n = 0; n < e.length; n++) { var r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r) } else if (r > 127 && r < 2048) { t += String.fromCharCode(r >> 6 | 192); t += String.fromCharCode(r & 63 | 128) } else { t += String.fromCharCode(r >> 12 | 224); t += String.fromCharCode(r >> 6 & 63 | 128); t += String.fromCharCode(r & 63 | 128) } } return t }, _utf8_decode: function (e) { var t = ""; var n = 0; var r = c1 = c2 = 0; while (n < e.length) { r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r); n++ } else if (r > 191 && r < 224) { c2 = e.charCodeAt(n + 1); t += String.fromCharCode((r & 31) << 6 | c2 & 63); n += 2 } else { c2 = e.charCodeAt(n + 1); c3 = e.charCodeAt(n + 2); t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63); n += 3 } } return t } }
-
+    var Base64 = { _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (e) { var t = ""; var n, r, i, s, o, u, a; var f = 0; e = Base64._utf8_encode(e); while (f < e.length) { n = e.charCodeAt(f++); r = e.charCodeAt(f++); i = e.charCodeAt(f++); s = n >> 2; o = (n & 3) << 4 | r >> 4; u = (r & 15) << 2 | i >> 6; a = i & 63; if (isNaN(r)) { u = a = 64 } else if (isNaN(i)) { a = 64 } t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a) } return t }, decode: function (e) { var t = ""; var n, r, i; var s, o, u, a; var f = 0; e = e.replace(/[^A-Za-z0-9\+\/\=]/g, ""); while (f < e.length) { s = this._keyStr.indexOf(e.charAt(f++)); o = this._keyStr.indexOf(e.charAt(f++)); u = this._keyStr.indexOf(e.charAt(f++)); a = this._keyStr.indexOf(e.charAt(f++)); n = s << 2 | o >> 4; r = (o & 15) << 4 | u >> 2; i = (u & 3) << 6 | a; t = t + String.fromCharCode(n); if (u != 64) { t = t + String.fromCharCode(r) } if (a != 64) { t = t + String.fromCharCode(i) } } t = Base64._utf8_decode(t); return t }, _utf8_encode: function (e) { e = e.replace(/\r\n/g, "\n"); var t = ""; for (var n = 0; n < e.length; n++) { var r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r) } else if (r > 127 && r < 2048) { t += String.fromCharCode(r >> 6 | 192); t += String.fromCharCode(r & 63 | 128) } else { t += String.fromCharCode(r >> 12 | 224); t += String.fromCharCode(r >> 6 & 63 | 128); t += String.fromCharCode(r & 63 | 128) } } return t }, _utf8_decode: function (e) { var t = ""; var n = 0; var r = c1 = c2 = 0; while (n < e.length) { r = e.charCodeAt(n); if (r < 128) { t += String.fromCharCode(r); n++ } else if (r > 191 && r < 224) { c2 = e.charCodeAt(n + 1); t += String.fromCharCode((r & 31) << 6 | c2 & 63); n += 2 } else { c2 = e.charCodeAt(n + 1); c3 = e.charCodeAt(n + 2); t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63); n += 3 } } return t } };
     var encodedString = Base64.encode(authorizationHeaderParams);
-
+// document.getElementById('result').innerHTML = encodedString;
     var twitterURL = "https://api.twitter.com/1.1/search/tweets.json?result_type=popular&count=30&include_entities=false&q=" + text;
+    var request1 = new XMLHttpRequest();
 
-    var request = new XMLHttpRequest();
+    request1.open("POST", g_TwitterOAuth2Token, false);
+    request1.setRequestHeader("Authorization", "Basic " + "U1lYcjhWZTJJV2FaZ01qT3BKZnlkOEpKQzoxUG5CQUJUTDJVTkhjWGFuTkZVWFc3UDdSRmFoaWhUaEt4bElLU3JKNm1zdmo2V0dTSg");
+    request1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    request1.send("grant_type=client_credentials");
+    var response = request1.responseText;
 
-    request.open("POST", g_TwitterOAuth2Token, false);
-    request.setRequestHeader("Authorization", "Basic " + encodedString);
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    request.send("grant_type=client_credentials");
-    var response = request.responseText;
-
+    // document.getElementById('result').innerHTML = response;
     var token = JSON.parse(response).access_token;
-
 
 
     request = new XMLHttpRequest();
