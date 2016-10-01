@@ -1,5 +1,10 @@
 ﻿/* Common app styling */
-
+.btn {
+    border-radius: 0;
+}
+.well {
+    border-radius: 0;
+}
 #content-header {
     padding-bottom:80px;
     padding-left:15px;
