@@ -9,7 +9,7 @@ function onPageDetailsReceived(pageDetails)  {
     // document.getElementById('summary').innerHTML = pageDetails.summary;
     console.log(pageDetails);
     populatePage(pageDetails.summary);
-
+    genDeepDive(pageDetails.summary);
 
 }
 
