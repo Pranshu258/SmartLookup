@@ -1,30 +1,155 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            body { 
-                min-width: 420px; 
-                overflow-x: hidden; 
-                font-family: Arial, sans-serif; 
-                font-size: 12px; 
-            }
-            input, textarea { 
-                width: 420px; 
-            }
-            input#save { 
-                font-weight: bold; width: auto; 
-            }
-        </style>
-        <script src="jquery.min.js"></script>
-        <script src="popup.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>DeepInsight</title>
 
-    </head>
-    <body>
-        <div id="addbookmark">
-            <h1 id="title"></h1>
-            <h4 id="url"></h4>
-            <p id="summary"></p>
-            <h4 id="result"></h4>
+    <link href="Content/Office.css" rel="stylesheet" type="text/css" />
+    <!--<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>-->
+    <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
+     <!-- <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>
+     <script src="../../Scripts/Office/1/office.js" type="text/javascript"></script>
+    <script src="../DataControllers/SentimentDataController.js"></script>
+    <script src="../DataControllers/TopicsListCardController.js"></script>
+    <script src="../DataControllers/WikiPediaDataController.js"></script>
+    <script src="../DataControllers/NewsFeedController.js"></script>
+    <script src="../DataControllers/DeepDiveController.js"></script>
+    <script src="../DataControllers/WeatherController.js"></script>
+    <script src="../DataControllers/WebFeedController.js"></script>
+    <script src="../DataControllers/TwitterFeedController.js"></script>
+    <script src="../DataControllers/ImagesFeedController.js"></script>
+    <script src="../DataControllers/VideosFeedController.js"></script>
+    <script src="../DataControllers/ArticleController.js"></script>
+    <script src="../AppController.js"></script>
+    <link href="../App.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/customFonts.css" rel="stylesheet" />
+    <script src="../App.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-3.1.0.js"></script>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../../Scripts/bootstrap.js"></script>
+    <link href="Home.css" rel="stylesheet" type="text/css" />
+    <script src="Home.js" type="text/javascript"></script> -->
+    <script>
+      //  getLocation();
+    </script>
+
+</head>
+<body>
+
+    <div class="josefin" id="content-header">
+        <div class="row">
+            <div class="col-xs-8">
+                <h1>DeepInsight</h1>
+                <button id="get-data-from-selection-head" style="height:30px" class="btn-default">Go</button>
+            </div>
+            <div class="col-xs-4" id="weather"style="float:left"></div>
         </div>
-    </body>
+
+    </div>
+
+
+
+    <div id="action-box">
+        <div>
+            <div class="accordion-group accordion-caret" style="padding-top:0px;">
+                <div class="accordion-heading" style="text-align:center;padding-top:0px">
+                    <a class="accordion-toggle btn btn-default btn-block" data-toggle="collapse" href="#collapseOne"></a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse in" style="padding-left:15px;padding-right:15px;">
+                    <div class="accordion-inner">
+                        <div class="row navbar-default" style="word-wrap:break-word; text-align:center;">
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#overview">Overview</a>
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#web">Web</a>
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#images">Images</a>
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#videos">Videos</a>
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#wikipedia">WikiPedia</a>
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#articles">Articles</a>
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#news">News</a>
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#deeper">Deep Dive</a>
+                            <a class="col-xs-4 btn btn-default boo"   data-toggle="tab" href="#twitter">Twitter</a>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tab-content custom-padding">
+                <div id="overview" class="tab-pane fade in active">
+                    <div id="sentiment" class="well josefin custom-overview-card">
+                        <h3>Estimating the Sentiment...</h3>
+                    </div>
+                    <div id="topics-list" class="well josefin custom-overview-card">
+                        <h3>Identifying the context of discussion...</h3>
+                    </div>
+                </div>
+                <div id="web" class="tab-pane" fade>
+                    <h1 class="josefin"><b>Web Search</b></h1><p>Finding content on web that you might like... </p>
+                </div>
+                <div id="images" class="tab-pane fade">
+                    <h1 class="josefin"><b>Images</b></h1><p>Finding Images that you might like... </p>
+                </div>
+                <div id="videos" class="tab-pane fade">
+                    <h1 class="josefin"><b>Videos</b></h1><p>Finding videos that you might like... </p>
+                </div>
+                <div id="wikipedia" class="tab-pane fade">
+                    <h1 class="josefin"><b>Wikipedia Excerpts</b></h1><p>I'm going through wikipedia to fetch articles, that might be relevant to you</p>
+                </div>
+
+                <div id="articles" class="tab-pane fade" style="display">
+                    <h1 class="josefin"><b>Academic Articles</b></h1><p>I'll find some papers that have been published, so you can write on...</p>
+                </div>
+                <div id="news" class="tab-pane fade">
+                    <h1 class="josefin"><b>News</b></h1><p>Lets see what's happening around the world...</p>
+                </div>
+                <div id="twitter" class="tab-pane fade">
+                    <h1 class="josefin"><b>Twitter Feed</b></h1><p>I'll pull in Tweets I think might be useful to you!</p>
+                </div>
+                <div id="deeper" class="tab-pane fade" >
+                    <ul class="list-inline" style="text-align:center">
+                        <li class="active"><a data-toggle="tab" href="#deeper_entity">Entities</a></li>
+                        <li><a data-toggle="tab" href="#deeper_concepts">Concepts</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <hr />
+                        <p style="text-align:center">For best experience resize the app by dragging the slider.</p>
+                        <hr />
+                        <div id="deeper_entity" class="tab-pane fade in active">
+                            I'll make a Deeper analytical report of text.
+                        </div>
+                        <div id="deeper_concepts" class="tab-pane fade in ">
+                            I'll make a Deeper analytical report of text.
+                        </div>
+
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-block btn-default" data-toggle="collapse" data-target="#pbw2">Proudly Built with...</button>
+                <div id="pbw2" class="collapse">
+                    <div class="well">
+                        <table class="table">
+                            <tr>
+                                <td><a href="https://www.microsoft.com/cognitive-services/en-us/bing-web-search-api">Bing</a></td>
+                                <td><a href="https://www.textrazor.com">Text Razor</a></td>
+                                <td><a href="https://www.meaningcloud.com/">Meaning Cloud</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://en.wikipedia.org/api/">Wikipedia</a></td>
+                                <td><a href="https://developer.yahoo.com/weather/">Yahoo!</a></td>
+                                <td><a href="https://dev.twitter.com/rest/public">Twitter</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</body>
+
 </html>
