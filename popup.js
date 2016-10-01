@@ -8,6 +8,7 @@ function onPageDetailsReceived(pageDetails)  {
     // document.getElementById('url').innerHTML = pageDetails.url;
     // document.getElementById('summary').innerHTML = pageDetails.summary;
     console.log(pageDetails);
+    genSentiment(pageDetails.summary);
     populatePage(pageDetails.summary);
     genDeepDive(pageDetails.summary);
 
