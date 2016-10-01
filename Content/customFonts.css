@@ -1,9 +1,9 @@
 ﻿
 @font-face {
 	font-family: 'Josefin Sans';
-	src: url('../../fonts/JosefinSans.ttf');
+	src: url('../fonts/JosefinSans.ttf');
 }
 
 .josefin {
 	font-family: 'Josefin Sans', sans-serif;
-} 
+}
