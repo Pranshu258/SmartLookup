@@ -59,9 +59,9 @@ runAllJobs = function (topicsList, topicsWikiNamesList) {
     //
     $('#images').html('');
     genImages(topicsList);
-    //
-    // $('#videos').html('');
-    // genVideos(topicsList);
+    
+    $('#videos').html('');
+    genVideos(topicsList);
     // //$('#articles').html('');
     //
     // $('#news').html('');
