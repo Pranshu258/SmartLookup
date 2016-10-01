@@ -1,0 +1,71 @@
+﻿/* Page-specific styling */
+.custom-overview-card{
+    padding:15px; 
+    border-radius:0;
+    text-align:center;
+}
+
+.nav-pills>li+li {
+  
+  margin:0;
+}
+.nav-pills li{
+    padding:0;
+    margin:0;
+} 
+/*.nav-pills a{
+    margin:0;
+    padding:0;
+}*/
+
+.btn-circle {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border-radius: 40px;
+}
+
+ .accordion-caret .accordion-toggle:hover {
+        text-decoration: none;
+    }
+    .accordion-caret .accordion-toggle:before {
+        font-size: 15px;   
+    }
+    .accordion-caret .accordion-toggle:not(.collapsed):before {
+        content: "▾ Collapse";
+
+    }
+    .accordion-caret .accordion-toggle.collapsed:before {
+        content: "▸ Expand";
+    }
+
+.imgWrap {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.imgDescription {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:4px;
+  background: rgba(0,0,0, 0.5);
+  color: #fff;
+
+
+  visibility: hidden;
+  opacity: 0;
+
+  /*remove comment if you want a gradual transition between states
+  -webkit-transition: visibility opacity 0.2s;
+  */
+}
+
+
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
+}
