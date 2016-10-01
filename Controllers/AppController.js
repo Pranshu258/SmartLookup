@@ -57,8 +57,8 @@ runAllJobs = function (topicsList, topicsWikiNamesList) {
     // $('#wikipedia').html('<h1 class="josefin"><b>Wikipedia Excerpts</b></h1><p>I went through all of wikipedia to fetch articles, that might be relevant to you</p>');
     // genWikipediaPage(topicsList, topicsWikiNamesList);
     //
-    // $('#images').html('');
-    // genImages(topicsList);
+    $('#images').html('');
+    genImages(topicsList);
     //
     // $('#videos').html('');
     // genVideos(topicsList);
