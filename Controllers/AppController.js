@@ -18,7 +18,6 @@ populatePage = function (text) {
         },
         "success": function (data) {
             console.log(data);
-            document.getElementById('result').innerHTML = data.response.topics[0]["label"];
             var coarseTopics = data.response.coarseTopics;
             var topics = data.response.topics;
             var topicsList = [];

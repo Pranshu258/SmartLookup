@@ -1,18 +1,18 @@
 ﻿/* Page-specific styling */
 .custom-overview-card{
-    padding:15px; 
+    padding:15px;
     border-radius:0;
     text-align:center;
 }
 
 .nav-pills>li+li {
-  
+
   margin:0;
 }
 .nav-pills li{
     padding:0;
     margin:0;
-} 
+}
 /*.nav-pills a{
     margin:0;
     padding:0;
@@ -25,19 +25,19 @@
   border-radius: 40px;
 }
 
- .accordion-caret .accordion-toggle:hover {
-        text-decoration: none;
-    }
-    .accordion-caret .accordion-toggle:before {
-        font-size: 15px;   
-    }
-    .accordion-caret .accordion-toggle:not(.collapsed):before {
-        content: "▾ Collapse";
+.accordion-caret .accordion-toggle:hover {
+    text-decoration: none;
+}
+.accordion-caret .accordion-toggle:before {
+    font-size: 15px;
+}
+.accordion-caret .accordion-toggle:not(.collapsed):before {
+    content: "▾ Collapse";
 
-    }
-    .accordion-caret .accordion-toggle.collapsed:before {
-        content: "▸ Expand";
-    }
+}
+.accordion-caret .accordion-toggle.collapsed:before {
+    content: "▸ Expand";
+}
 
 .imgWrap {
   position: relative;
