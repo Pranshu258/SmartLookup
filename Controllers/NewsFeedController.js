@@ -11,7 +11,7 @@
         "url": "https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=" + encodeURI(query) + "&count=20&safesearch=moderate",
         "method": "GET",
         "headers": {
-            "ocp-apim-subscription-key": "e0dba888cd24432792bb7473c05a3858",
+            "ocp-apim-subscription-key": "9b7f1453fb254a17944f4ca4fe6e1547",
             "cache-control": "no-cache",
         }
     }
