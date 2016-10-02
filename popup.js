@@ -8,10 +8,19 @@ function onPageDetailsReceived(pageDetails)  {
     // document.getElementById('url').innerHTML = pageDetails.url;
     // document.getElementById('summary').innerHTML = pageDetails.summary;
     console.log(pageDetails);
-    genSentiment(pageDetails.summary);
-    populatePage(pageDetails.summary);
-    genDeepDive(pageDetails.summary);
-
+    if(pageDetails.summary == "")
+    {
+        $('#action-box').html(html);
+        var html = "<br><br><br><br><br><div class='custom-padding josefin'><div class='well custom-overview-card'><h3>Please select some text, to grab the insights!</h3></div></div>"
+        $('#action-box').html(html);
+    }
+    else
+    {
+        genSentiment(pageDetails.summary);
+        populatePage(pageDetails.summary);
+        genDeepDive(pageDetails.summary);
+    }
+    
 }
 
 // Global reference to the status display SPAN
