@@ -42,8 +42,8 @@ var genImagesHtml = function (dataObj) {
                 for (t = 0; t < 2; t++) {
                     imgurl = dataObj.value[count + t].thumbnailUrl;
                     url = dataObj.value[count + t].webSearchUrl;
-                    html = html +
-                        '<div class="col-xs-6" style="margin:0;padding:0" ><a target="_blank" href="' + url + '"><img   class="img-responsive" src="' + imgurl + '"/></div>'
+                     html = html +
+                        '<div class="col-xs-6" style="margin:0;padding:0"><div class="imgWrap" ><a target="_blank" href="' + url + '"><img alt="polaroid" class="img-responsive" src="' + imgurl + '"/><p class="imgDescription">' + dataObj.value[count + t].name + '</p></a></div></div>';
                 }
                 html = html + '</div>';
             }

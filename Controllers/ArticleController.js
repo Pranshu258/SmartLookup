@@ -13,7 +13,7 @@ var genArticlesHtml = function (topicsList) {
         poop.push(topicsList[count]);
     }
     var query = poop.join(" ");
-    $('#articles').html('<iframe id="liframe" name="liframe"  src="https://academic.microsoft.com/#/search?iq=%2540' + poop.join("%2520") + '%2540&q=' + poop.join("%20") + '&filters=&from=0&sort=0"    style="border: 0; margin:0; padding:0; width:100%; height:800px; "></iframe>');
+    $('#articles').html('<iframe id="liframe" name="liframe"  src="https://academic.microsoft.com/#/search?iq=%2540' + poop.join("%2520") + '%2540&q=' + poop.join("%20") + '&filters=&from=0&sort=0"    style="border: 0; margin:0; padding:0; width:100%; height:800px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);"></iframe>');
     //var count;
     //var html = '<h1 class="josefin"><b>Articles</b></h1><p>Look what I found! These Academic articles match your content</p>';
     //var script = '';

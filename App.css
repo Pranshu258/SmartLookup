@@ -4,11 +4,13 @@
 }
 .well {
     border-radius: 0;
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 #content-header {
     padding-bottom:80px;
     padding-left:15px;
-    background: #2a8dd4;
+    background: rgb(16,124,16);
     color: #fff;
     position: fixed;
     z-index:1000;
@@ -18,6 +20,7 @@
     width: 100%;
     height: 115px; /* Fixed header height */
     overflow: hidden; /* Disable scrollbars for header */
+    
 }
 
 #content-main {
