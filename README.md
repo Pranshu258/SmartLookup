@@ -1,1 +1,5 @@
-Example code for my article on building a simple Google Chrome extension.
+# Smart LookUP
+
+*We give you the insights, You build the story !*
+
+A comprehensive tool to ease your tasks of writing.
