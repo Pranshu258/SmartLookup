@@ -9,11 +9,12 @@ Base
 body {
     width: 400px;
     margin: 0;
-    height: 700px;
+    height: 800px;
     padding: 0;
     border: 0;
     max-height: 100%;
     overflow-y: hidden;
+
 }
 
 /******************************************************************
